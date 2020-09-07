@@ -22,7 +22,7 @@ public class Album
 		this.albumName = albumName;
 	}
 	
-	public void addSong(String songName, float songDuration)
+	public void addSong(String songName, double songDuration)
 	{
 		if (getSong(songName) != null){
 			System.out.println("Song " + songName + " is already in the Album");

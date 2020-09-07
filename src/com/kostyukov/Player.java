@@ -140,7 +140,7 @@ public class Player
 	private static void PrintPlayHelp()
 	{
 		System.out.println("Press:\n" +
-				"0. - To quit\n" +
+				"0. - To return to main menu\n" +
 				"1. - To Skip backward to previous song\n" +
 				"2. - To Play the current song\n" +
 				"3. - To Skip forward to next song\n" +
@@ -191,7 +191,7 @@ public class Player
 		System.out.println("Songs in the album " + currentAlbum.getAlbumName());
 		for (Song nextSong : currentAlbum.getSongs())
 		{
-			System.out.println("Title: " + nextSong.getTitle() + " | Duration: " + nextSong.getDuration());
+			System.out.println(nextSong);
 		}
 	}
 	
@@ -221,7 +221,7 @@ public class Player
 		System.out.println("Songs in the Playlist");
 		for (Song nextSong : playlist)
 		{
-			System.out.println("Title: " + nextSong.getTitle() + " | Duration: " + nextSong.getDuration());
+			System.out.println(nextSong);
 		}
 	}
 	
@@ -229,15 +229,15 @@ public class Player
 	{
 		currentAlbum = new Album("Classic");
 		albums.add(currentAlbum);
-		currentAlbum.addSong("Silent night", 6.28f);
-		currentAlbum.addSong("Cosmos stacker", 3.49f);
-		currentAlbum.addSong("Holly trinity", 3.32f);
+		currentAlbum.addSong("Silent night", 6.28d);
+		currentAlbum.addSong("Cosmos stacker", 3.49d);
+		currentAlbum.addSong("Holly trinity", 3.32d);
 		
 		currentAlbum = new Album("Rock");
 		albums.add(currentAlbum);
-		currentAlbum.addSong("Midnight club", 3.48f);
-		currentAlbum.addSong("Paper cut", 4.02f);
-		currentAlbum.addSong("Here I am", 3.30f);
+		currentAlbum.addSong("Midnight club", 3.48d);
+		currentAlbum.addSong("Paper cut", 4.02d);
+		currentAlbum.addSong("Here I am", 3.30d);
 	}
 	
 	private static void FillPlaylist()
