@@ -90,7 +90,7 @@ public class Player
 		
 		if (listIterator.hasPrevious())
 		{
-			System.out.println("Previous song: " + listIterator.previous().getTitle());
+			System.out.println("Previous song: " + listIterator.previous());
 		}
 		else
 		{
@@ -103,12 +103,12 @@ public class Player
 	{
 		if (listIterator.hasPrevious() && goingForward)
 		{
-			System.out.println("Playing " + listIterator.previous().getTitle());
+			System.out.println("Playing " + listIterator.previous());
 			goingForward = false;
 		}
 		else {
 			
-			System.out.println("Playing " + listIterator.next().getTitle());
+			System.out.println("Playing " + listIterator.next());
 			goingForward = true;
 		}
 	}
@@ -123,7 +123,7 @@ public class Player
 		
 		if (listIterator.hasNext())
 		{
-			System.out.println("Next song: " + listIterator.next().getTitle());
+			System.out.println("Next song: " + listIterator.next());
 		}
 		else
 		{
@@ -135,6 +135,10 @@ public class Player
 	public static void RemoveSong(ListIterator<Song> listIterator)
 	{
 		listIterator.remove();
+		if (listIterator.hasNext())
+			System.out.println("Next song: " + listIterator.next());
+		else if (listIterator.hasPrevious())
+			System.out.println("Previous song: " + listIterator.previous());
 	}
 	
 	private static void PrintPlayHelp()
